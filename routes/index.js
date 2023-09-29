@@ -4,9 +4,16 @@ var fs = require('fs');
 
 
 router.get('/', function(req, res, next) {
-  fs.readdir("./files", function(err, files){
+  fs.readdir("./files",{withFileTypes: true}, function(err, files){
     res.render('index',{files});
   });
 });
+router.get('/filecreate', function(req, res, next){
+  fs.writeFile(`./files/${req.query.filename}`, "", function(err){
+    if(err) throw err ;
+    res.redirect("/");
+  });
+});
+
 
 module.exports = router;
