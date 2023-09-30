@@ -53,14 +53,31 @@ html,body{
   background-color: #ffffffc9;
   /* background-color: red */
 }
-#fileform{
+.fileform{
   width: 100%;
   display: none;
 }
-#fileform form{
+.fileform form{
   width: 100%;
 }
-#fileform input{
+.fileform input{
+  width: 75%;
+  outline-color: royalblue;
+  border: 1px solid #dadada;
+  border-radius: 5px;
+  padding: 4px 12px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.folderform{
+  width: 100%;
+  display: none;
+}
+.folderform form{
+  width: 100%;
+}
+.folderform input{
   width: 75%;
   outline-color: royalblue;
   border: 1px solid #dadada;

@@ -17,19 +17,23 @@
           <h3>VS CODE</h3>
           <div id="icons">
             <i id="createfile" class="ri-file-add-line"></i>
-            <i class="ri-folder-add-line"></i>
+            <i id="createfolder"class="ri-folder-add-line"></i>
             <a href="./"><i class="ri-restart-line"></i></a>
             <i class="ri-folders-line"></i>
           </div>
         </div>
-        <div id="fileform">
+        <div class="form fileform">
           <form action="/filecreate">
-            <input type="text" name="filename">
+            <input type="text" name="filename" placeholder="filename">
+          </form>
+        </div>
+        <div class="form folderform">
+          <form action="/foldercreate">
+            <input type="text" name="foldername" placeholder="foldername">
           </form>
         </div>
         <% files.forEach(function (elem){ %>
-        <div id="files">
-         
+        <div id="files">         
             <h4>
               <% if(elem.isDirectory()){ %>
                 <i class="ri-folder-line"></i>
@@ -38,9 +42,9 @@
               <% } %>
               <%= elem.name %>
             </h4>
-            
         </div>
         <% }); %>
+
       </div>
       <div id="right"></div>
     </div>
